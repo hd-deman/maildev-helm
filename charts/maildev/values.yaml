@@ -6,6 +6,8 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: 1.1.0
 
+command: ["/usr/src/app/bin/maildev"]
+
 outgoing_relay:
   # MAILDEV_OUTGOING_HOST
   host: smtp.gmail.com

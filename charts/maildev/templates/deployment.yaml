@@ -30,7 +30,7 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          command: ["/usr/src/app/bin/maildev"]
+          command: {{ .Values.command }}
           args: ["--verbose", "--outgoing-secure", "--auto-relay"]
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
